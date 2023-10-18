@@ -18,6 +18,7 @@ from matplotlib.gridspec import GridSpec
 from pickle import load
 import torch
 from pathlib import Path
+from src.fed2.train_data import get_dataset_fn
 
 
 class Server:
@@ -32,6 +33,10 @@ class Server:
         self.alpha = None
 
     def run_exp(self, exp_dict):
+        # Check dataset existance
+        get_dataset_fn(exp_dict['dataset'])[0](exp_dict['dataset_dir'])
+        get_dataset_fn(exp_dict['dataset'])[1](exp_dict['dataset_dir'])
+
         timestamp = datetime.now()
         timestamp = f'_{timestamp.hour:02}{timestamp.minute:02}{timestamp.second:02}'
         # sns.set_theme()

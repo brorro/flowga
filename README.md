@@ -7,7 +7,7 @@ See [FLOwGA](https://ieeexplore.ieee.org/document/10214577) on IEEE open access.
 ## Environment
 1. Create conda environment and install packages with following codes.
 ```
-conda install matplotlib tqdm torchvision pytorch torchvision pytorch-cuda=11.7 -c pytorch -c nvidia
+conda install matplotlib tqdm torchvision pytorch torchvision pytorch-cuda=11.8 -c pytorch -c nvidia
 pip install -U "ray"
 pip install tbparse tensorboard
 ```
